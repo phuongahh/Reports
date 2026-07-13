@@ -1,0 +1,30 @@
+# Báo cáo ngày 3
+Nội dung kiến thức đã học hôm nay: <br>
+
+1. semaphore  <br>
+    - Giói hạn số task có thể chạy cùng 1 lúc <br>
+    - Khởi tạo semaphore <br>
+    - Tạo sem_clone <br>
+    - Đẩy các task vào semaphore, chỉ chạy số lượng task giới hạn, khi 1 task xong sẽ đẩy task đang chờ vào<br>
+2. broadcast <br>
+    - Nhiều Sender - Nhiều Receiver <br>
+    - Kênh chuyên dành cho user <br>
+3. mpsc <br>
+    - Nhiều Sender - 1 Receiver <br>
+    - Kênh dành cho server <br>
+
+VD: hệ thống phòng chat <br>
+    - Khi user gửi tn, sẽ gọi tx của mpsc để đẩy lên server chung. <br>
+    - Gọi rx của broadcast để lấy tn gửi cho user <br>
+
+4. hashmap <br>
+5. timeout <br>
+6. join_set <br>
+    - Tất cả các task trong join chạy cùng 1 lúc, cái nào xong trước sẽ trả về trước. <br>
+    - JoinSet cung cấp hàm .join_next().await. Hàm này hoạt động theo cơ chế ai xong trước, ra trước. <br>
+    - Khác với tokio::spawn sẽ phải chạy theo thứ tự <br>
+
+7. select <br>
+
+8. watch <br>
+    -1 Sender - Nhiều Receiver <br>
